@@ -199,7 +199,7 @@ function main() {
         			break;
         		case "carbon":
         			context.main_phrase = content.carbon.main_phrase;
-        			context.main_phrase = content.carbon.explanation;
+        			context.explanation = content.carbon.explanation;
         			break;
         	};
         	
