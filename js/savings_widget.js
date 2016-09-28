@@ -158,7 +158,7 @@ function main() {
             crossorigin: "anonymous"
         });
         css_link.appendTo('head');
-        
+
         var last_year_nrg;
         var this_year_nrg;
         
@@ -186,6 +186,7 @@ function main() {
         	);
         });
         
+        
         var updateHTML = function(unit, context, content) {
         	/******* Load HTML *******/
         	switch(unit) {
@@ -199,7 +200,7 @@ function main() {
         			break;
         		case "carbon":
         			context.main_phrase = content.carbon.main_phrase;
-        			context.main_phrase = content.carbon.explanation;
+        			context.explanation = content.carbon.explanation;
         			break;
         	};
         	
@@ -207,8 +208,9 @@ function main() {
 	        var template = Handlebars.compile(source);
 	        var html_source   = template(context);
 	        $('#savings-widget').html(html_source);
+
+	        car_pictogram(context.car_saved_nrg);
         }
-        
         
         
         $(document).on( "click", "#carbutton", function() { updateHTML("car", context, content);});
@@ -217,6 +219,9 @@ function main() {
 
 		
 		updateHTML("car", context, content);
+		
+		
+		
 
 });        
 }

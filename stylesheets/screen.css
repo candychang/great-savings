@@ -67,7 +67,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 14, ../sass/screen.scss */
+/* line 15, ../sass/screen.scss */
 .chart {
   display: table;
   table-layout: fixed;
@@ -82,21 +82,21 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-size: 12px;
   line-height: 20px;
 }
-/* line 32, ../sass/screen.scss */
+/* line 33, ../sass/screen.scss */
 .chart li {
   position: relative;
   display: table-cell;
   vertical-align: bottom;
   height: 150px;
 }
-/* line 39, ../sass/screen.scss */
+/* line 40, ../sass/screen.scss */
 .chart span {
   margin: 0 1em;
   display: block;
   background: rgba(209, 236, 250, 0.75);
   animation: draw 1s ease-in-out;
 }
-/* line 45, ../sass/screen.scss */
+/* line 46, ../sass/screen.scss */
 .chart span:before {
   position: absolute;
   left: 0;
@@ -107,6 +107,43 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   text-align: center;
   content: attr(title);
   word-wrap: break-word;
+}
+
+/* line 62, ../sass/screen.scss */
+#sliderDiv {
+  margin: 10px;
+  margin-top: 30px;
+  height: 15px;
+  width: 350px;
+}
+
+/* line 77, ../sass/screen.scss */
+.wheel {
+  fill: #FFD4A5;
+}
+
+/* line 78, ../sass/screen.scss */
+.carbody {
+  fill: #65BAF7;
+}
+
+/* line 80, ../sass/screen.scss */
+#visualization {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  padding-bottom: 80%;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+/* line 89, ../sass/screen.scss */
+.svgcontent {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  float: left;
 }
 
 @keyframes draw {
