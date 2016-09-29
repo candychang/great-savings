@@ -1,0 +1,152 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+
+@import "compass/reset";
+@import "compass/css3";
+@import "styles";
+@import 'https://fonts.googleapis.com/css?family=Lato';
+
+.container{
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  margin: 10px;
+  
+  @media (min-width: 991px) { 
+    max-width: 70%;
+  }
+}
+
+#vizbutton {
+  margin: 10px;
+}
+
+.header h1 {
+  font-size: 14px;
+}
+.divider {
+  height: 1px;
+  width:100%;
+  display:block; /* for use on default inline elements like span */
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: lighten(#000, 50);
+}
+
+.chart{
+  display:table;
+  table-layout: fixed;   
+  
+  width:60%;
+  max-width:700px;
+  height:100px;
+  margin:0 auto;
+  
+  background-size: 100% 50px;
+  background-position: left top;
+  background-image:linear-gradient(bottom, rgba(0, 0, 0, 0.1) 2%, transparent 2%);
+  
+  text-align: center;
+  font-size: 12px;
+  line-height: 20px;
+  
+  
+  li{
+    position:relative;
+    display:table-cell;
+    vertical-align:bottom;
+    height:80px;
+  }
+  
+  span{
+    margin:0 1em;
+    display: block;
+    background: rgba(#65BAF7, .75);
+    animation: draw 1s ease-in-out;
+    
+    &:before{
+      position:absolute;
+      left:0;right:0;top:100%;
+      padding:5px 1em 0;
+  		display:block;
+      text-align:center;
+      content:attr(title);
+      word-wrap: break-word;
+    }
+    
+  }
+  
+}
+
+.wheel{fill:#FFD4A5;}
+.carbody{fill:#65BAF7;}
+
+.treeIcons{
+    animation: grow 1s ease-in-out;
+}
+
+.carIcons{
+    animation: drive 1s ease-in-out;
+}
+
+#treebase{ fill:$tree-base; }
+#trunk{ fill:$trunk; }
+#treerighthalf{ fill:$treelighter; }
+    
+#visualization { 
+	display: inline-block;
+	position: relative;
+	width: 100%;
+	padding-bottom: 80%; 
+	vertical-align: middle; 
+	overflow: hidden; 
+}   
+
+.svgcontent { 
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	float: center;
+}
+
+#carbonbody{
+    fill:#808080;
+    animation: shrink 1s ease-in-out;
+
+}
+
+#carbonbody{
+    fill:#808080;
+    animation: shrink 1s ease-in-out;
+
+}
+#carbonlight{fill:#B3B3B3;}
+
+
+
+
+@keyframes draw{
+  0%{height:0;} 
+}
+
+@keyframes shrink {
+  0%{transform:scale(1.5);}
+}
+
+@keyframes grow {
+    0% {
+	transform:translateY(200%);
+	opacity: 0;
+}
+}
+
+@keyframes drive {
+    0% {
+	transform:translateX(-100%);
+	opacity: 0;
+}
+}
+
