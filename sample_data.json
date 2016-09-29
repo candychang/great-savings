@@ -1,0 +1,19 @@
+{"energy_info": {
+    "savings": {
+        "car": "six",
+        "tree": "twenty",
+        "carbon": "two hundred and forty-six"
+    },
+    "usage": {
+        "last_month": {
+            "date": "January 2014",
+            "kwh": 573,
+        },
+        "last_year": {
+            "date": "January 2013,
+            "kwh": 791
+        }
+    }
+} 
+}
+

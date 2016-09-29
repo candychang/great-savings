@@ -150,14 +150,6 @@ function getSampleData() {
 /******** Our main function ********/
 function main() { 
     jQuery(document).ready(function($) { 
-        /******* Load CSS *******/
-        var css_link = $("<link>", { 
-            rel: "stylesheet", 
-            href: "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css",
-            integrity: "sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u",
-            crossorigin: "anonymous"
-        });
-        css_link.appendTo('head');
 
         var last_year_nrg;
         var this_year_nrg;
@@ -208,8 +200,20 @@ function main() {
 	        var template = Handlebars.compile(source);
 	        var html_source   = template(context);
 	        $('#savings-widget').html(html_source);
-
-	        car_pictogram(context.car_saved_nrg);
+			
+			switch(unit) {
+				case "car":
+					car_pictogram(context.car_saved_nrg);
+					break;
+				case "tree":
+					tree_pictogram(context.tree_saved_nrg);
+					break;
+				case "carbon":
+					carbon_chart(context.last_year_nrg, context.this_year_nrg);
+					d3.select("circle").transition().style("r", "10");
+					break;
+			}
+	        
         }
         
         
